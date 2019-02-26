@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>Dandy</title>
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/hint.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Poiret+One|Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>    
+</head>
+<body>
+<div id="app">
+<div class="row">
+    <div class="col s6"><h1> {{ title }} </h1>
+    
+    <ul class="pages" role="tablist">
+        <li>
+        <input type="radio" name="tabs" id="tab6" />
+        <label class="hint--bottom-left btn" aria-label="Caern'on" for="tab6" role="tab" aria-selected="false" aria-controls="panel6" tabindex="0"><i class="fas fa-crow"></i></label>
+        <div id="tab-content6" class="tab-content" role="tabpanel" aria-labelledby="Caern'on" aria-hidden="true">
+          <p>e</p>
+        </div>
+    </li>
+    
+    <li>
+        <input type="radio" name="tabs" id="tab5" />
+        <label class="hint--bottom-left btn" aria-label="Spellbook" for="tab5" role="tab" aria-selected="false" aria-controls="panel5" tabindex="0"><i class="fas fa-book"></i></label>
+        <div id="tab-content5" class="tab-content" role="tabpanel" aria-labelledby="Spellbook" aria-hidden="true">
+          <p>d</p>
+        </div>
+    </li>
+    
+     <li>
+        <input type="radio" name="tabs" id="tab4" />
+        <label class="hint--bottom-left btn" aria-label="Inventory" for="tab4" role="tab" aria-selected="false" aria-controls="panel4" tabindex="0"><i class="fas fa-suitcase"></i></label>
+        <div id="tab-content4" class="tab-content" role="tabpanel" aria-labelledby="Inventory" aria-hidden="true">
+          <p>c</p>
+        </div>
+    </li>
+    
+    <li>
+        <input type="radio" name="tabs" id="tab3" />
+        <label class="hint--bottom-left btn" aria-label="Proficiencies" for="tab3" role="tab" aria-selected="false" aria-controls="panel3" tabindex="0"><i class="fas fa-star"></i></label>
+        <div id="tab-content3" class="tab-content" role="tabpanel" aria-labelledby="proficiencies" aria-hidden="true">
+          <p>b</p>
+        </div>
+    </li>
+    
+    <li>
+        <input type="radio" name="tabs" id="tab2" />
+        <label class="hint--bottom-left btn" aria-label="Statistics" for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0"><i class="fas fa-id-card"></i></label>
+        <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="statistics" aria-hidden="true">      
+          
+          <svg class="statCircle" viewbox="0 0 250 260" width="40%" height="325px">
+                  
+                  <text x="125" y="10">str</text><text class="textStats" x="125" y="25">{{ strength }}</text>
+                  <text x="225" y="70">dex</text><text class="textStats" x="225" y="85">{{ dexterity }}</text>
+                  <text x="225" y="200">con</text><text class="textStats" x="225" y="185">{{ constitution }}</text>
+                  <text x="126" y="260">int</text><text class="textStats" x="125" y="245">{{ intelligence }}</text>
+                  <text x="25" y="200">wis</text><text class="textStats" x="25" y="185">{{ wisdom }}</text>
+                  <text x="25" y="70">cha</text><text class="textStats" x="25" y="85">{{ charisma }}</text>
+                  
+                  <svg id="chart" viewbox="0 0 200 200" width="200px" height="200px" x="25" y="30"><g id="grid" style="stroke:hsla(0, 100%, 100%, .3);"><def><polygon id="polygon" points="100 0 186.603 50 186.603 150 100 200 13.3875 150 13.3975 50"></polygon><marker style="fill:red;" id="markerCircle" markerWidth="4" markerHeight="4" refX="2" refY="2"><circle cx="2" cy="2" r="2" style="stroke:none; fille:hsla(180, 70%, 70%, 1)"></circle></marker></def><line id="l1" x1="100" y1="0" x2="100" y2="200"></line><line id="l2" x1="100" y1="0" x2="100" y2="200"></line><line id="l3" x1="100" y1="0" x2="100" y2="200"></line><use xlink:href="#polygon" id="p1"></use><use xlink:href="#polygon" id="p2"></use><use xlink:href="#polygon" id="p3"></use><use xlink:href="#polygon" id="p4"></use></g>
+                      
+                      <polygon id="playerHexagon" v-bind:points="circle" style="marker-start: url(#markerCircle); marker-mid: url(#markerCircle);"></polygon>
+                  </svg></svg>
+          
+        </div>
+    </li>
+    
+    <li>
+        <input type="radio" name="tabs" id="tab1" checked />
+        <label class="hint--bottom-left btn" aria-label="Home" for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0"><i class="fas fa-home"></i></label>
+        <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="home" aria-hidden="false">
+          <span class="text" v-html="biography"></span>
+        </div>
+    </li>
+    
+</ul>
+
+<br style="clear: both;" />
+    
+    
+    </div>
+</div>
+</div>
+</body>
+<footer>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</footer>
+</html>
