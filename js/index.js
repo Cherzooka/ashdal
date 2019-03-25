@@ -1,7 +1,5 @@
 characters.sort((a, b) => (a.name > b.name) ? 1 : -1)
 
-
-
 window.onload = function () {
     var app = new Vue({
         el: '#app',
