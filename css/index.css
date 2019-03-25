@@ -9,15 +9,8 @@
 }
 
 ::-webkit-scrollbar {
-    height: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1c1a18;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(63, 58, 53, 1);
+    height: 0;
+    width: 0;
 }
 
 * {
@@ -34,81 +27,104 @@ body {
 }
 
 #app {
-    position: absolute;
-    height: 100%;
-    width: 100%;
     background: -moz-linear-gradient(left, rgba(43, 40, 36, 1) 0%, rgba(63, 58, 53, 0) 40%);
     background: -webkit-linear-gradient(left, rgba(43, 40, 36, 1) 0%, rgba(63, 58, 53, 0) 40%);
     background: linear-gradient(to right, rgba(43, 40, 36, 1) 0%, rgba(63, 58, 53, 0) 40%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1a18', endColorstr='#003f3a35', GradientType=1);
 }
 
-.character-select {
-    z-index: 111111111111;
+.VueCarousel-pagination {
     position: fixed;
-    width: 100%;
-    top: 0;
     bottom: 0;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 0 100px;
+    text-align: left !important;
+    padding-left: 7rem;
+    padding-top: 2rem;
 }
 
-.character-select h1 {
+.VueCarousel-dot {
+    background-color: #3f3a35 !important;
+}
+
+.VueCarousel-dot--active {
+    background-color: #fefefe !important;
+}
+
+.character-select-header {
     position: fixed;
-    top: 0;
+    bottom: 2rem;
+    padding-left: 4rem;
+    font-size: 4rem;
     width: 100%;
+}
+
+.character-select {
+    height: 100vh;
+}
+
+.character-select.selected .VueCarousel-inner {
+    transform: none !important;
+    transition: none !important;
 }
 
 .character-select .character-container {
     transform: skew(-10deg);
-    border-bottom: 5px solid;
     border-radius: 4px;
     background: #1c1a18;
-    width: 100%;
     margin: 0 10px;
-    border-top: 5px solid;
+    border-right: 10px solid;
+    border-left: 10px solid;
+}
+
+.character-container.selected {
+    transform: skew(0deg);
+}
+
+.character-container.selected .character {
+    transform: skew(0deg)
 }
 
 .character {
-    height: 100%;
-    text-align: center;
+    text-align: right;
     transform: skew(10deg);
-    position: relative;
-    right: 78px;
 }
 
 .character img {
-    height: 100%;
-    width: auto;
+    margin-right: 7em;
+    height: 100vh;
 }
 
 .character .content {
     font-family: 'Poiret One', cursive;
-    font-size: 1.7em;
+    font-size: 3.7em;
     float: right;
-    width: 100%;
-    bottom: 0;
+    top: 2rem;
+    left: 8rem;
     position: absolute;
     text-shadow: 4px 3px 0px #1c1a18;
 }
 
+.character .content button i {
+    font-size: 2rem;
+}
+
 h1 {
-    text-align: center;
     font-family: 'Poiret One', cursive;
     text-shadow: 4px 3px 0px #1c1a18;
 }
 
-.character-img {
+.character .sheet {
     position: fixed;
-    right: 0;
     top: 0;
-    width: auto;
-    height: 100%;
 }
 
-/* 
+
+
+
+
+
+
+
+
 
 .header {
     position: fixed;
@@ -457,5 +473,3 @@ text {
 .hit-dice svg {
     width: 1.4rem;
 }
-
-*/

@@ -5,17 +5,32 @@
     <meta charset="utf-8">
     <title>Dandy</title>
 
+    <!--- Favicon --->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/favicon/favicon-16x16.png">
+    <link rel="manifest" href="css/favicon/site.webmanifest">
+    <link rel="mask-icon" href="css/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--- Stylesheets --->
     <link rel="stylesheet" href="css/hint.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Poiret+One|Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Poiret+One|Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/vue-material.min.css">
+    <link rel="stylesheet" href="css/vuetify.css">
     <link rel="stylesheet" href="css/index.css">
+
+    <!-- Javascript --->
     <script src="js/vue.js"></script>
-    <script type="module" src="js/vue-material.min.js"></script>
-    <script type="module" src="js/vue-carousel.min.js"></script>
-    <script src="js/character-select.js"></script>
-    
+    <script src="js/vuetify.js"></script>
+    <script src="js/vue-carousel.min.js"></script>
+
     <!--- Characters --->
+    <script>
+        const characters = []
+
+    </script>
     <script src="js/Characters/rhys.js"></script>
     <script src="js/Characters/jude.js"></script>
     <!---
@@ -28,18 +43,33 @@
     <script src="js/Characters/siorus.js"></script>
     <script src="js/Characters/jun.js"></script>
     --->
-    
-    
+
+
     <script src="js/index.js"></script>
 
 </head>
 
 <body>
     <div id="app">
-        <carousel class="character-select">
-           <h1> Character Select </h1>
-            <character-component v-for="character in characters" :character="character" :key="character.name" />
+        <carousel class="character-select" v-bind:class="{ selected: selectedcharacter != '' }" v-bind:pagination-enabled="displayprofile" :per-Page="1" :loop="true">
+            <slide v-show="selectedcharacter == '' || selectedcharacter == character.name" v-for="character in characters" :title="character.name" :character="character.name" :key="character.name">
+                <div class="character-container" v-bind:class="{ selected: selectedcharacter == character.name }" v-bind:style="{borderColor: 'hsl(' + character.color + ')'}">
+                    <div class="character">
+                        <img :src="character.img">
+                        <div class="content"> {{character.name}}
+
+                            <v-btn v-if="selectedcharacter == character.name" fab large outline color="#fefefe" v-on:click="selectedcharacter = ''"><i class="fas fa-angle-down"></i></v-btn>
+                            <v-btn v-else fab large outline color="#fefefe" v-on:click="selectedcharacter = character.name"><i class="fas fa-angle-up"></i></v-btn>
+
+                        </div>
+
+                        <div class="sheet"> </div>
+                    </div>
+                </div>
+            </slide>
+
         </carousel>
+        <h1 class="character-select-header" v-if="selectedcharacter == ''"> Character Select </h1>
 
     </div>
 </body>
