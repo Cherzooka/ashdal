@@ -115,6 +115,11 @@ h1 {
 .character .sheet {
     position: fixed;
     top: 0;
+    display: none;
+}
+
+.character-select.selected .character .sheet {
+    display: block;
 }
 
 
