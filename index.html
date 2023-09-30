@@ -41,14 +41,6 @@
 
     <script src="js/index.js"></script>
 
-    <script>
-    window.onload = function () {
-        var tabs = document.querySelectorAll('.tabs')
-        for (var i = 0; i < tabs.length; i++){
-            M.Tabs.init(tabs[i]);
-        }}
-    </script>
-
 </head>
 
 <body>
@@ -69,12 +61,25 @@
                             <div class="row"><div class="col s7 header">
            
                                 <ul class="tabs">
-                                    <li class="tab col s1 offset-s5"><a class="active" href="#Home"><i class="fas fa-home"></i></a></li>
-                                    <li class="tab col s1"><a href="#Statistics"><i class="fas fa-id-card"></i></a></li>
-                                     <li class="tab col s1"><a href="#Proficiencies"><i class="fas fa-star"></i></a></li>
-                                    <li class="tab col s1"><a href="#Inventory"><i class="fas fa-suitcase"></i></a></li>
-                                    <li class="tab col s1"><a href="#Spellbook"><i class="fas fa-book"></i></a></li>
-                                    <li class="tab col s1"><a href="#Caernon"><i class="fas fa-crow"></i></a></li>
+                                    <input type="radio" name="tabs" id="tabHome" class="tab" checked="checked">
+                                        <i class="fas fa-home"></i>
+                                        <label for="tabone">Tab Home</label>
+                                    <input type="radio" name="tabs" id="tabStats" class="tab">
+                                        <i class="fas fa-id-card"></i>
+                                        <label for="tabone">Tab Statistics</label>
+                                    <input type="radio" name="tabs" id="tabProfs" class="tab">
+                                        <i class="fas fa-star"></i>
+                                        <label for="tabone">Tab Proficiencies</label>
+                                    <input type="radio" name="tabs" id="tabInv" class="tab">
+                                        <i class="fas fa-suitcase"></i>
+                                        <label for="tabone">Tab Inventory</label>
+                                    <input type="radio" name="tabs" id="tabSpell" class="tab">
+                                        <i class="fas fa-book"></i>
+                                        <label for="tabone">Tab Spellbook</label>
+
+                                    <input type="radio" name="tabs" id="tabCaern" class="tab">
+                                        <i class="fas fa-crow"></i>
+                                        <label for="tabone">Tab Caernon</label>
                                 </ul>
                             </div>
         
