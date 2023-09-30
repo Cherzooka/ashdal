@@ -143,6 +143,7 @@ h1 {
 
 .tabs .tab {
     margin-right: 10px !important;
+    display: inline-block;
 }
 
 .tabs .tab a {
