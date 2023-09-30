@@ -142,6 +142,8 @@ h1 {
     position: fixed;
     left: 150px;
     top: 100px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .tabs .tab {
@@ -149,17 +151,13 @@ h1 {
     display: inline-block;
 }
 
-.tabs .tab a {
-    text-overflow: initial !important;
-    color: white !important;
-    background-color: #1c1a18 !important;
-    border-radius: 10px;
-}
-
-.tabs .tab a:hover,
-.tabs .tab a.active {
-    background-color: #3f3a35 !important;
-    color: #a49f99 !important;
+.tabs label {
+    order: 1;
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    transition: background ease 0.2s;
 }
 
 .tabs .tab i {
@@ -172,10 +170,23 @@ h1 {
 }
 
 .tab-content {
-    position: fixed;
-    top: 11.5rem;
-    overflow: scroll;
-    bottom: 0;
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+}
+
+.tabs input[type=radio] {
+    display: none;
+}
+
+.tabs input[type=radio]:checked + label {
+    
+}
+
+.tabs input[type=radio]:checked + label + .tab {
+    display: block;
 }
 
 
