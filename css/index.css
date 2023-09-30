@@ -139,6 +139,9 @@ h1 {
     background: transparent !important;
     height: 37px !important;
     margin-bottom: 50px !important;
+    position: fixed;
+    left: 150px;
+    top: 100px;
 }
 
 .tabs .tab {
